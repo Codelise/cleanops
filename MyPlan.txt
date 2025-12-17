@@ -1,0 +1,18 @@
+What I'm thinking about this Inefficient Solid Waste Collection was:
+FOR USERS:
+- Users can get the posted schedules of waste collection on their respective baranggay
+- Users can get notifications via email since its a Web App for now about the schedule of waste collection on their respective baranggay
+- Users can see the lists of penalties if they broke the waste law
+- Users can file a report via photo, capture image about a trash that's been thrown out everywhere
+- Users can also contact LGU to collect their waste from their home
+- Users can see real time location of the Waste Collector
+
+FOR ADMINS OR LGU's:
+- LGU's can see the list of users on their respective baranggay
+- LGU's can set schedule, update or delete about the waste collection on their specific baranggay
+- LGU's can provide real time chat with users about contacting them to collect the users waste from their home
+- LGU's can respond to the reports from the user about trash
+- LGU's can provide real time location to the users by using their phone's GPS
+- LGU's can send email alerts when the waste collection will be tommorow
+- LGU's can file a report on the people who broke the waste law and received the corresponding penalty
+- LGU's can have a weekly report about the waste collection using an AI model like (Gemini, OpenAi, etc).

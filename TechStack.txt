@@ -1,0 +1,30 @@
+HTML, CSS, JS, SUPABASE,
+
+PROJECT STRUCTURE:
+cleanops/
+├── index.html                    # Landing page
+├── auth/
+│   ├── login.html
+│   ├── register.html
+│   └── auth.js
+├── resident/
+│   ├── dashboard.html           # Resident dashboard
+│   ├── schedule.html            # View schedule
+│   ├── report.html              # Submit report
+│   ├── tracker.html             # Live tracker
+│   └── resident.js
+├── admin/
+│   ├── dashboard.html           # Admin dashboard
+│   ├── manage-schedules.html    # CRUD schedules
+│   ├── view-reports.html        # Manage reports
+│   ├── analytics.html           # AI reports
+│   └── admin.js
+├── assets/
+│   ├── css/
+│   │   └── style.css           # Single CSS file (or modular)
+│   └── js/
+│       ├── supabase-client.js  # Supabase initialization
+│       ├── utils.js            # Helper functions
+│       └── components.js       # Reusable components
+└── supabase/
+    └── migrations/             # SQL migration files
