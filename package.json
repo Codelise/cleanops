@@ -1,0 +1,29 @@
+{
+  "name": "cleanops",
+  "version": "1.0.0",
+  "description": "Waste Management System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "serve": "npx live-server public/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Codelise/cleanops.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Codelise/cleanops/issues"
+  },
+  "homepage": "https://github.com/Codelise/cleanops#readme",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.11",
+    "@tailwindcss/typography": "^0.5.19",
+    "tailwindcss": "^4.1.18"
+  }
+}

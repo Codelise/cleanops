@@ -16,3 +16,6 @@ FOR ADMINS OR LGU's:
 - LGU's can send email alerts when the waste collection will be tommorow
 - LGU's can file a report on the people who broke the waste law and received the corresponding penalty
 - LGU's can have a weekly report about the waste collection using an AI model like (Gemini, OpenAi, etc).
+
+
+I WILL USE ES6 Modules for better JavaScript Files organization

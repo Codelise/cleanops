@@ -1,0 +1,9 @@
+Design System:
+- Primary Color: #228B22 (Forest Green)
+- Secondary Color: #0056B3 (Trust Blue)
+- Accent Color: #FF8C00 (Action Orange)
+- Neutral Colors: #F5F5F5 (Light BG), #333333 (Dark Text)
+- Fonts: Poppins for headings (600 weight), Inter for body (400 weight)
+- Spacing: 8px base unit (8, 16, 24, 32, 48, 64)
+- Border Radius: 8px
+- Shadows: Subtle elevation (0 2px 8px rgba(0,0,0,0.1))
