@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CleanOps Olongapo - Smart Waste Management</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700;800&amp;family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-body text-[#181811] dark:text-white transition-colors duration-200"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden"
+    >
+      <header
+        class="fixed w-full mt-2 z-50 flex items-center align-center justify-between whitespace-nowrap border-b border-solid rounded-full border-white/20 dark:border-white/10 bg-white/80 dark:bg-gray-500/20 backdrop-blur-xl px-5 py-3 shadow-lg shadow-black/5"
+      >
+        <div class="flex items-center gap-4 text-[#181811] dark:text-white">
+          <div
+            class="size-8 flex items-center justify-center text-forest-green dark:text-primary"
+          >
+            <span class="material-symbols-outlined text-3xl">recycling</span>
+          </div>
+          <h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">
+            CleanOps Olongapo
+          </h2>
+        </div>
+        <div class="flex flex-1 justify-end gap-8">
+          <div class="hidden md:flex items-center gap-9">
+            <a
+              class="text-sm font-medium leading-normal hover:text-forest-green dark:hover:text-primary transition-colors"
+              href="#"
+              >Home</a
+            >
+            <a
+              class="text-sm font-medium leading-normal hover:text-forest-green dark:hover:text-primary transition-colors"
+              href="#"
+              >Services</a
+            >
+            <a
+              class="text-sm font-medium leading-normal hover:text-forest-green dark:hover:text-primary transition-colors"
+              href="#"
+              >Contact</a
+            >
+          </div>
+          <button
+            class="registerBtn hidden md:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#181811] text-sm font-bold leading-normal tracking-[0.015em] hover:brightness-105 transition-all"
+          >
+            <span class="truncate">Register Now</span>
+          </button>
+          <div
+            class="flex md:hidden items-center justify-center"
+            id="hamburgerContainer"
+          >
+            <button
+              id="hamburgerMenu"
+              aria-expanded="false"
+              onclick="toggleMobileSidebar()"
+            >
+              <span class="material-symbols-outlined">menu</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden fixed inset-y-0 right-0 w-64 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-2xl z-50 transform translate-x-full transition-transform duration-300 border-l border-white/20 dark:border-gray-700/50"
+      >
+        <div class="p-6">
+          <!-- Close button -->
+          <div class="flex justify-end mb-6">
+            <button id="closeMobileMenu" class="p-2">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+
+          <!-- Menu items -->
+          <nav class="flex flex-col items-center gap-4">
+            <a
+              href="#"
+              class="py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
+              >Home</a
+            >
+            <a
+              href="#"
+              class="py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
+              >Services</a
+            >
+            <a
+              href="#"
+              class="py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
+              >Contact</a
+            >
+            <button
+              class="registerBtn mt-4 py-3 px-4 bg-primary text-[#181811] rounded-lg font-bold"
+            >
+              Register Now
+            </button>
+          </nav>
+        </div>
+      </div>
+      <div
+        id="sidebarOverlay"
+        class="hidden fixed inset-0 bg-black/70 z-40"
+      ></div>
+
+      <main class="grow">
+        <div class="layout-container flex h-full grow flex-col">
+          <div class="px-4 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+            <div
+              class="layout-content-container flex flex-col max-w-[1200px] flex-1"
+            >
+              <div class="@container mb-12">
+                <div class="@[480px]:p-4">
+                  <div
+                    class="relative flex min-h-[560px] flex-col gap-6 overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat @[480px]:gap-8 items-center justify-center p-8 md:p-14 text-center shadow-lg"
+                    data-alt="A clean, modern urban street in Olongapo City with greenery and a waste management truck in the background"
+                    style="
+                      background-image: linear-gradient(
+                          rgba(0, 0, 0, 0.4) 0%,
+                          rgba(0, 0, 0, 0.7) 100%
+                        ),
+                        url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOxt94UiBq6Rb-NphsbsXg1vNGRy9asGzDLNreDgA1lmoAwySdrziUUiCGhFb_tPKiYlwzUwjuGtvDexGEPpeajc7doKyJDAW9Bj364zGDTNBmnqFWTZ5wyvpjZERjpFmkpWB4Bvbpn7dBwl5UxtcAGCzQrwCkaLVcwmhRwBqgp7t5WlOx-xSrBdBTkvGCid55CY6axiYdUSNOca1MmwwLZuFYYxLA5t-EoRxFgVWB7_woJQnqPuco8p4FU5Od5Gpii2lupSolprY');
+                    "
+                  >
+                    <div class="flex flex-col gap-4 max-w-[800px] z-10">
+                      <div
+                        class="inline-flex items-center justify-center gap-2 self-center rounded-full bg-white/20 px-4 py-1.5 backdrop-blur-sm border border-white/10"
+                      >
+                        <span
+                          class="material-symbols-outlined text-primary text-sm"
+                          >public</span
+                        >
+                        <span class="text-white text-sm font-medium"
+                          >Official Waste Management System of Olongapo
+                          City</span
+                        >
+                      </div>
+                      <h1
+                        class="text-white text-4xl font-black font-display leading-tight tracking-[-0.033em] @[480px]:text-6xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                      >
+                        Smart Waste Management for a Cleaner Future
+                      </h1>
+                      <h2
+                        class="text-white/90 text-lg font-normal leading-relaxed max-w-[600px] mx-auto"
+                      >
+                        Efficient, transparent, and eco-friendly waste
+                        solutions. Check schedules, report issues, and track
+                        trucks in real-time.
+                      </h2>
+                    </div>
+                    <div class="w-full max-w-[520px] z-10 mt-4">
+                      <div
+                        class="flex flex-col p-2 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-2xl"
+                      >
+                        <label class="relative block">
+                          <div
+                            class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
+                          >
+                            <span class="material-symbols-outlined text-primary"
+                              >location_on</span
+                            >
+                          </div>
+                          <select
+                            id="barangay-select"
+                            name="baranggay"
+                            class="block w-full pl-12 pr-4 py-4 rounded-xl bg-white text-[#181811] text-base font-medium focus:ring-4 focus:ring-primary/50 focus:border-primary border-none appearance-none cursor-pointer"
+                          >
+                            <option disabled="" selected="" value="">
+                              Select your Barangay to view schedules...
+                            </option>
+                            <option value="asinan" name>Asinan</option>
+                            <option value="banicain">Banicain</option>
+                            <option value="barretto">Barretto</option>
+                            <option value="east_bajac_bajac">
+                              East Bajac-bajac
+                            </option>
+                            <option value="west_bajac_bajac">
+                              West Bajac-bajac
+                            </option>
+                            <option value="east_tapinac">East Tapinac</option>
+                            <option value="west_tapinac">West Tapinac</option>
+                            <option value="gordon_heights">
+                              Gordon Heights
+                            </option>
+                            <option value="kalaklan">Kalaklan</option>
+                            <option value="mabayuan">Mabayuan</option>
+                            <option value="new_cabalan">New Cabalan</option>
+                            <option value="old_cabalan">Old Cabalan</option>
+                            <option value="new_ilalim">New Ilalim</option>
+                            <option value="new_kababae">New Kababae</option>
+                            <option value="new_kalalake">New Kalalake</option>
+                            <option value="pag_asa">Pag Asa</option>
+                            <option value="santa_rita">Sta Rita</option>
+                          </select>
+                          <div
+                            class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none"
+                          >
+                            <span
+                              class="material-symbols-outlined text-gray-400"
+                              >expand_more</span
+                            >
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="flex flex-wrap gap-4 justify-center mt-4 z-10">
+                      <button
+                        class="registerBtn flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary text-[#181811] text-base font-bold font-display leading-normal tracking-[0.015em] hover:scale-105 transition-transform shadow-[0_0_20px_rgba(249,245,6,0.4)]"
+                      >
+                        <span>Register Now</span>
+                      </button>
+                      <button
+                        class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-transparent border-2 border-white text-white text-base font-bold font-display leading-normal tracking-[0.015em] hover:bg-white hover:text-[#181811] transition-colors"
+                      >
+                        <span>Learn More</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-24 lg:gap-32 py-16 px-4 @container">
+                <div class="flex flex-col gap-4 text-center items-center mb-4">
+                  <h2
+                    class="text-[#181811] dark:text-white text-3xl lg:text-4xl font-bold font-display leading-tight tracking-tight max-w-[720px]"
+                  >
+                    Core Capabilities
+                  </h2>
+                  <p
+                    class="text-gray-600 dark:text-gray-300 text-lg font-normal leading-normal max-w-[600px]"
+                  >
+                    Our system empowers residents to keep Olongapo clean through
+                    smart, accessible technology.
+                  </p>
+                </div>
+                <div
+                  class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20"
+                >
+                  <div class="w-full lg:w-1/2 order-1 lg:order-1">
+                    <div
+                      class="relative overflow-hidden rounded shadow-lg group h-[300px] md:h-[400px]"
+                    >
+                      <img
+                        alt="Green waste collection truck servicing Olongapo City"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLEYP9DG94meyn-Wfw4MBY5DfMDOTHZ1fQkngj10c5YaPBfZodZfjKKK-ZPm2CgItVB_UISLx6uhvVzIDw75yW2UC5fWfeBolDWuqA6WSLUru7tR57DdhhpX_dPnlAQiWjY33PHWD5lQvnzsE1A-uY74T-ML6zaH3M68EED52JhbKedT8qPf207-1z5zsGJ07GZ593npW7oaTwhfV5tFfSs6uDNrc74cAjEoo6YE5fwhumzJWoDuadEqLXftqjnnLeEA8QwXfwMy4"
+                      />
+                      <div
+                        class="absolute inset-0 bg-forest-green/10 group-hover:bg-transparent transition-colors duration-300"
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    class="w-full lg:w-1/2 order-2 lg:order-2 flex flex-col gap-5"
+                  >
+                    <div class="inline-flex items-center gap-3">
+                      <div
+                        class="flex items-center justify-center p-2 rounded-full bg-forest-green/10"
+                      >
+                        <span
+                          class="material-symbols-outlined text-forest-green dark:text-primary text-3xl"
+                          >calendar_month</span
+                        >
+                      </div>
+                      <span
+                        class="text-sm font-bold uppercase tracking-wider text-forest-green dark:text-primary"
+                        >Reliable Service</span
+                      >
+                    </div>
+                    <h3
+                      class="text-[#181811] dark:text-white text-3xl lg:text-4xl font-bold font-display leading-tight"
+                    >
+                      Schedule Tracking
+                    </h3>
+                    <p
+                      class="text-gray-600 dark:text-gray-300 text-lg font-normal leading-relaxed"
+                    >
+                      Never miss a collection day again. Get precise, real-time
+                      alerts specifically tailored for your Barangay zone. View
+                      monthly calendars and receive notifications the night
+                      before pickup.
+                    </p>
+                    <ul class="flex flex-col gap-2 mt-2">
+                      <li
+                        class="flex items-center gap-2 text-gray-700 dark:text-gray-200"
+                      >
+                        <span
+                          class="material-symbols-outlined text-forest-green dark:text-primary text-sm"
+                          >check</span
+                        >
+                        <span>Zone-specific calendars</span>
+                      </li>
+                      <li
+                        class="flex items-center gap-2 text-gray-700 dark:text-gray-200"
+                      >
+                        <span
+                          class="material-symbols-outlined text-forest-green dark:text-primary text-sm"
+                          >check</span
+                        >
+                        <span>SMS and Push Notifications</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20"
+                >
+                  <div class="w-full lg:w-1/2 order-1 lg:order-2">
+                    <div
+                      class="relative overflow-hidden rounded shadow-lg group h-[300px] md:h-[400px]"
+                    >
+                      <img
+                        alt="Resident using smartphone to report waste issue"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOnwp21YREMj4ZIdK50sOnsTZLDDfUPIyuL4Ee5HFMgqL82pmy87zTBmUmqXj0UNhQF37yeq4bx_NU5Xxebb7xCQJ_Q6OH7TKoMIrcTtWW106NkHM169BkYNruibMS7SX0s2AgUWty6XDdwx52VDCKPfyGZ2jQJaMtgavwfX5ppN-JQl7iHtely6ndVTe3bjR1RKG9LV5Ak-igsx5rccpispcf6VGTBCHGVszO2By91No3hwvD4YIOkXG2HcPb8-_WtezIhKpgiXc"
+                      />
+                      <div
+                        class="absolute inset-0 bg-trust-blue/10 group-hover:bg-transparent transition-colors duration-300"
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    class="w-full lg:w-1/2 order-2 lg:order-1 flex flex-col gap-5"
+                  >
+                    <div class="inline-flex items-center gap-3">
+                      <div
+                        class="flex items-center justify-center p-2 rounded-full bg-trust-blue/10"
+                      >
+                        <span
+                          class="material-symbols-outlined text-trust-blue dark:text-blue-400 text-3xl"
+                          >add_a_photo</span
+                        >
+                      </div>
+                      <span
+                        class="text-sm font-bold uppercase tracking-wider text-trust-blue dark:text-blue-400"
+                        >Citizen Action</span
+                      >
+                    </div>
+                    <h3
+                      class="text-[#181811] dark:text-white text-3xl lg:text-4xl font-bold font-display leading-tight"
+                    >
+                      Photo Reports
+                    </h3>
+                    <p
+                      class="text-gray-600 dark:text-gray-300 text-lg font-normal leading-relaxed"
+                    >
+                      Spot a problem in your community? Simply snap a photo to
+                      report uncollected waste or illegal dumping instantly.
+                      Your reports are geotagged and sent directly to city
+                      sanitation teams.
+                    </p>
+                    <div class="flex gap-4 mt-2">
+                      <div
+                        class="bg-white dark:bg-gray-800 p-4 rounded shadow-sm border border-gray-100 dark:border-gray-700 flex-1 text-center"
+                      >
+                        <span
+                          class="block text-2xl font-bold font-display text-action-orange"
+                          >24h</span
+                        >
+                        <span class="text-xs text-gray-500">Avg. Response</span>
+                      </div>
+                      <div
+                        class="bg-white dark:bg-gray-800 p-4 rounded shadow-sm border border-gray-100 dark:border-gray-700 flex-1 text-center"
+                      >
+                        <span
+                          class="block text-2xl font-bold font-display text-forest-green"
+                          >100%</span
+                        >
+                        <span class="text-xs text-gray-500">Transparency</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20"
+                >
+                  <div class="w-full lg:w-1/2 order-1 lg:order-1">
+                    <div
+                      class="relative overflow-hidden rounded shadow-lg group h-[300px] md:h-[400px]"
+                    >
+                      <img
+                        alt="Interactive city map displaying live truck locations"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgUsa9VsCu97BCJLBQUAiWrq7WF1Sz3-7RRm_cJ-Y8KgQ1FyaC7mVktfZEhntHy55xc9BRMabpcg5022gfZieFoxCSFZbU_wImcWymzuiuhAuWKjXGqMZHKzhZt4v2WE314iAmexi1yQwKOHHCN1302krWJoHSPzv8kCTsfvqcQZGshIel8__9AmeNvQ5pWnUtVCaf0CpzsmRPEQdIswGe2RCpLZbhFTx6_2NVDGTcIRZQJMKR1e5vRNLLpGZ3wxOjwxshy08Whcs"
+                      />
+                      <div
+                        class="absolute inset-0 bg-action-orange/10 group-hover:bg-transparent transition-colors duration-300"
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    class="w-full lg:w-1/2 order-2 lg:order-2 flex flex-col gap-5"
+                  >
+                    <div class="inline-flex items-center gap-3">
+                      <div
+                        class="flex items-center justify-center p-2 rounded-full bg-action-orange/10"
+                      >
+                        <span
+                          class="material-symbols-outlined text-action-orange text-3xl"
+                          >map</span
+                        >
+                      </div>
+                      <span
+                        class="text-sm font-bold uppercase tracking-wider text-action-orange"
+                        >Real-time Data</span
+                      >
+                    </div>
+                    <h3
+                      class="text-[#181811] dark:text-white text-3xl lg:text-4xl font-bold font-display leading-tight"
+                    >
+                      Live Updates
+                    </h3>
+                    <p
+                      class="text-gray-600 dark:text-gray-300 text-lg font-normal leading-relaxed"
+                    >
+                      Track collection trucks in real-time on our interactive
+                      city map. See Estimated Times of Arrival (ETAs) and avoid
+                      leaving waste out too early or too late.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="mt-8 mb-16 rounded-3xl bg-[#181811] dark:bg-white/5 text-white p-10 md:p-16 relative overflow-hidden"
+              >
+                <div
+                  class="absolute top-0 right-0 p-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"
+                ></div>
+                <div
+                  class="absolute bottom-0 left-0 p-32 bg-forest-green/20 rounded-full blur-3xl -ml-16 -mb-16 pointer-events-none"
+                ></div>
+                <div
+                  class="relative z-10 flex flex-col md:flex-row items-center gap-12"
+                >
+                  <div class="flex-1 flex flex-col gap-6">
+                    <h2
+                      class="text-3xl md:text-4xl font-black font-display tracking-tight"
+                    >
+                      Community Driven, Environmentally Focused
+                    </h2>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                      CleanOps connects the Olongapo community directly with
+                      waste management services. By registering, you contribute
+                      to a cleaner, healthier, and more sustainable city for
+                      everyone.
+                    </p>
+                    <ul class="flex flex-col gap-3 mt-2">
+                      <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary"
+                          >check_circle</span
+                        >
+                        <span class="text-gray-200"
+                          >Instant notifications for delays</span
+                        >
+                      </li>
+                      <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary"
+                          >check_circle</span
+                        >
+                        <span class="text-gray-200"
+                          >Transparent reporting dashboard</span
+                        >
+                      </li>
+                      <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary"
+                          >check_circle</span
+                        >
+                        <span class="text-gray-200"
+                          >Earn eco-points for verifying pickups</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="flex-1 w-full">
+                    <div
+                      class="aspect-video w-full rounded-2xl overflow-hidden bg-gray-800 border border-gray-700 relative shadow-2xl"
+                      data-location="Olongapo City"
+                      style="
+                        https: //lh3.googleusercontent.com/aida-public/AB6AXuDI1J5JJnt9VkHAe-QMPrXuvueYTfN_fSGSCvSz7h0LCmPH6PZ7J3letkUvc8oIrFI_jSY9IzmTq8GRVOWxn-FLxUGcuY4PjdjlU_qSDKhOfI2BjRRaqK0_bGsimxPgT9FLfBKD_YVcy1qdx55FtSw46BddZziCYE7T5o-rb_cf0cgk3yEhRQXE0VvsCPZ1DEEXjka52-IEGE3BjXVtvR_8mhcbQnIXkThfddpKgYEyUFWyG0J3bkNt_vCbtOH5QbzsO-yevTNXzIA;;
+                      "
+                    >
+                      <img
+                        alt="Map view of Olongapo City showing waste collection routes and zones"
+                        class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
+                        data-alt="Digital map interface showing Olongapo city streets with active tracking markers"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEzkuHr2XOHWQiZ8Fcgd25731mzPMLDprphaN3NicE6RASH0G9sf2ufwHqiSQW3SNP6WuEEAV9pGBB0nGLxAdnAkIOdn9_FDRDXTQXqRfCXKwxxIqpzYqv2ow9M7N28dmvNvSoVO-ANVZ9bOc9H8-YGDLVJI4C6MMjS0hhn9iQ3-cKBOQrGrIi7-IN3K1--5Tne5ZdJa0IqjRmI7GEM2S9Y44nK5MRpXfAlP_1tFcg6hxXkMzuEcWYwZ2T4CRfyYIofpN7xyOtREg"
+                      />
+                      <div
+                        class="absolute bottom-4 left-4 bg-white text-black px-4 py-2 rounded-lg shadow-lg flex items-center gap-2"
+                      >
+                        <span class="relative flex h-3 w-3">
+                          <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+                          ></span>
+                          <span
+                            class="relative inline-flex rounded-full h-3 w-3 bg-green-500"
+                          ></span>
+                        </span>
+                        <span class="text-xs font-bold">5 Trucks Active</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer
+        class="border-t border-[#e6e6db] dark:border-gray-800 bg-background-light dark:bg-background-dark py-12"
+      >
+        <div
+          class="layout-container px-4 md:px-20 lg:px-40 flex justify-center"
+        >
+          <div class="flex flex-col gap-8 text-center max-w-[960px] w-full">
+            <div class="flex flex-col items-center gap-4">
+              <div
+                class="size-12 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-2xl"
+                  >account_balance</span
+                >
+              </div>
+              <h3
+                class="text-[#181811] dark:text-white text-xl font-bold font-display"
+              >
+                Olongapo City Waste Management
+              </h3>
+            </div>
+            <div
+              class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4"
+            >
+              <a
+                class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium"
+                href="#"
+                >Privacy Policy</a
+              >
+              <a
+                class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium"
+                href="#"
+                >Terms of Service</a
+              >
+              <a
+                class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium"
+                href="#"
+                >Contact Support</a
+              >
+              <a
+                class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium"
+                href="#"
+                >City Hall Website</a
+              >
+            </div>
+            <div class="h-px w-full bg-[#e6e6db] dark:bg-gray-800 my-4"></div>
+            <p class="text-gray-500 dark:text-gray-500 text-sm font-normal">
+              © 2024 Olongapo City. All rights reserved.
+              <br class="md:hidden" />
+              Powered by CleanOps Technology.
+            </p>
+          </div>
+        </div>
+      </footer>
+      <div
+        id="schedule-modal"
+        aria-labelledby="modal-title"
+        aria-modal="true"
+        class="fixed inset-0 z-[100] overflow-y-auto hidden"
+        role="dialog"
+      >
+        <div
+          id="modal-overlay"
+          class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm transition-opacity"
+        ></div>
+        <div
+          class="flex min-h-full items-center justify-center p-4 text-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-2xl bg-white dark:bg-[#23220f] text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl border border-gray-100 dark:border-gray-700"
+          >
+            <div
+              class="bg-background-light dark:bg-[#1f1e0d] px-4 py-4 sm:px-6 flex justify-between items-center border-b border-gray-200 dark:border-gray-800"
+            >
+              <div>
+                <h3
+                  class="text-2xl font-bold leading-6 text-[#181811] dark:text-white font-display"
+                  id="modal-title"
+                ></h3>
+                <p class="text-md text-gray-500 dark:text-gray-400 mt-0.5">
+                  Waste Collection Schedule • Oct 2024
+                </p>
+              </div>
+              <button
+                id="modal-close-btn"
+                class="flex align-center rounded-full p-1 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-pointer"
+                type="button"
+              >
+                <span
+                  class="material-symbols-outlined text-gray-500 dark:text-gray-400"
+                  >close</span
+                >
+              </button>
+            </div>
+            <div class="px-0 py-0">
+              <div class="overflow-x-auto">
+                <table
+                  class="min-w-full divide-y divide-gray-200 dark:divide-gray-800"
+                >
+                  <thead class="bg-gray-50 dark:bg-[#1f1e0d]">
+                    <tr>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+                        scope="col"
+                      >
+                        Barangay Name
+                      </th>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+                        scope="col"
+                      >
+                        Date
+                      </th>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+                        scope="col"
+                      >
+                        Time
+                      </th>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+                        scope="col"
+                      >
+                        Week
+                      </th>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+                        scope="col"
+                      >
+                        Year
+                      </th>
+                      <th
+                        class="px-6 py-3 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+                        scope="col"
+                      >
+                        Type
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    id="t-body"
+                    class="bg-white dark:bg-[#23220f] divide-y divide-gray-200 dark:divide-gray-800"
+                  >
+                    <tr
+                      class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
+                    >
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Asinan
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        Oct 1, Tue
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        6:00 AM
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        Week 1
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        2024
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <span
+                          class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-forest-green/10 text-forest-green"
+                        >
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-forest-green"
+                          ></span>
+                          Biodegradable
+                        </span>
+                      </td>
+                    </tr>
+                    <tr
+                      class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
+                    >
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Asinan
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        Oct 2, Wed
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        6:00 AM
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        Week 1
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        2024
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <span
+                          class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-trust-blue/10 text-trust-blue"
+                        >
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-trust-blue"
+                          ></span>
+                          Non-biodegradable
+                        </span>
+                      </td>
+                    </tr>
+                    <tr
+                      class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
+                    >
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Asinan
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        Oct 3, Thu
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        6:00 AM
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        Week 1
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        2024
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <span
+                          class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-forest-green/10 text-forest-green"
+                        >
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-forest-green"
+                          ></span>
+                          Biodegradable
+                        </span>
+                      </td>
+                    </tr>
+                    <tr
+                      class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
+                    >
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Asinan
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        Oct 4, Fri
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        6:00 AM
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        Week 1
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        2024
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <span
+                          class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-action-orange/10 text-action-orange"
+                        >
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-action-orange"
+                          ></span>
+                          Recyclable
+                        </span>
+                      </td>
+                    </tr>
+                    <tr
+                      class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
+                    >
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Asinan
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        Oct 8, Tue
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        6:00 AM
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        Week 2
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        2024
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <span
+                          class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-forest-green/10 text-forest-green"
+                        >
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-forest-green"
+                          ></span>
+                          Biodegradable
+                        </span>
+                      </td>
+                    </tr>
+                    <tr
+                      class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
+                    >
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Asinan
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        Oct 9, Wed
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        6:00 AM
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        Week 2
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        2024
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <span
+                          class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-trust-blue/10 text-trust-blue"
+                        >
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-trust-blue"
+                          ></span>
+                          Non-biodegradable
+                        </span>
+                      </td>
+                    </tr>
+                    <tr
+                      class="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
+                    >
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white"
+                      >
+                        Asinan
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        Oct 15, Tue
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        7:00 AM
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        Week 3
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300"
+                      >
+                        2024
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <span
+                          class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-special-purple/10 text-special-purple"
+                        >
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-special-purple"
+                          ></span>
+                          Special Waste
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 dark:bg-[#1f1e0d] px-4 py-4 sm:px-6 border-t border-gray-200 dark:border-gray-800"
+            >
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-y-3 gap-x-4 mb-6">
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-3 h-3 rounded-full bg-forest-green shadow-sm"
+                  ></div>
+                  <span
+                    class="text-xs font-medium text-gray-600 dark:text-gray-300"
+                    >Biodegradable</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-3 h-3 rounded-full bg-trust-blue shadow-sm"
+                  ></div>
+                  <span
+                    class="text-xs font-medium text-gray-600 dark:text-gray-300"
+                    >Non-biodegradable</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-3 h-3 rounded-full bg-action-orange shadow-sm"
+                  ></div>
+                  <span
+                    class="text-xs font-medium text-gray-600 dark:text-gray-300"
+                    >Recyclable</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <div
+                    class="w-3 h-3 rounded-full bg-special-purple shadow-sm"
+                  ></div>
+                  <span
+                    class="text-xs font-medium text-gray-600 dark:text-gray-300"
+                    >Special Waste</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
