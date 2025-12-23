@@ -8,6 +8,7 @@ const openMobileMenu = document.querySelector("#mobileMenu");
 const closeMobileMenu = document.querySelector("#closeMobileMenu");
 const overlay = document.querySelector("#sidebarOverlay");
 
+// function to toggle mobile sidebar
 function toggleMobileSidebar() {
   openMobileMenu.classList.toggle("hidden");
 
@@ -44,12 +45,14 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+// Register = Goes to registration page
 const registerBtn = document.querySelector(".registerBtn");
 
 registerBtn.addEventListener("click", () => {
   window.location.href = "auth/register.html";
 });
 
+// Hardcoded Baranggay Waste Collection Schedules
 const wastes_schedules = {
   asinan: {
     baranggay_id: 1,
@@ -375,6 +378,7 @@ const wastes_schedules = {
   },
 };
 
+// function to get waste schedule from the wastes_schedules object
 function getWasteSchedule(baranggay_id) {
   const normalizedId = baranggay_id.replace(/-/g, "_");
 
@@ -390,12 +394,14 @@ function getWasteSchedule(baranggay_id) {
   }
 }
 
+// function to format date to string
 function formatDate(dateString) {
   const date = new Date(dateString);
   const options = { month: "short", day: "numeric", weekday: "short" };
   return date.toLocaleDateString("en-US", options);
 }
 
+// function to get the type of waste for each baranggay
 function getWasteType(wasteType) {
   switch (wasteType) {
     case "Biodegradable":
@@ -415,6 +421,7 @@ function getWasteType(wasteType) {
   }
 }
 
+// function to show the dot color depending on the type of waste
 function getWasteTypeDot(wasteType) {
   switch (wasteType) {
     case "Biodegradable":
@@ -435,6 +442,7 @@ function getWasteTypeDot(wasteType) {
   }
 }
 
+// function to initialize, start the waste collection modal
 function initScheduleModal() {
   const baranggayDropdown = document.querySelector("#barangay-select");
   const scheduleModal = document.querySelector("#schedule-modal");
@@ -456,6 +464,7 @@ function initScheduleModal() {
   }
 }
 
+// function to show a selected schedule
 function selectedSchedule(event) {
   const getBaranggayId = event.target.value;
 
@@ -475,6 +484,7 @@ function selectedSchedule(event) {
   openModal();
 }
 
+// function to show the updated schedule of the baranggay
 function updateModal(baranggayData) {
   const modalTitle = document.querySelector("#modal-title");
   modalTitle.textContent = baranggayData.full_name;
@@ -517,6 +527,7 @@ function updateModal(baranggayData) {
   });
 }
 
+// function to open the modal of waste collection
 function openModal() {
   const scheduleModal = document.querySelector("#schedule-modal");
   const body = document.body;
@@ -527,6 +538,7 @@ function openModal() {
   document.querySelector("#modal-close-btn").focus();
 }
 
+// function to close the modal
 function closeModal() {
   const scheduleModal = document.querySelector("#schedule-modal");
   const body = document.body;
