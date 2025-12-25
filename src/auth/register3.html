@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CleanOps - Account Created</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700;800&amp;family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-[#111811] dark:text-white transition-colors duration-200"
+  >
+    <div
+      class="relative flex h-screen min-h-screen w-full flex-col overflow-hidden"
+    >
+      <!-- Header -->
+      <header
+        class="fixed w-full mt-2 z-50 flex items-center align-center justify-between whitespace-nowrap border-b border-solid rounded-full border-white/20 dark:border-white/10 bg-white/80 dark:bg-gray-500/20 backdrop-blur-xl px-5 py-3 shadow-lg shadow-black/5"
+      >
+        <div class="flex items-center gap-4 text-[#181811] dark:text-white">
+          <div
+            class="size-8 flex items-center justify-center text-forest-green dark:text-primary"
+          >
+            <span class="material-symbols-outlined text-3xl">recycling</span>
+          </div>
+          <h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">
+            <a href="/src/index.html">CleanOps Olongapo</a>
+          </h2>
+        </div>
+        <div class="flex flex-1 gap-8 justify-end">
+          <div class="hidden md:flex items-center gap-9">
+            <a
+              class="text-md font-medium leading-normal hover:text-forest-green dark:hover:text-primary transition-colors"
+              href="#"
+              >Home</a
+            >
+            <a
+              class="text-md font-medium leading-normal hover:text-forest-green dark:hover:text-primary transition-colors"
+              href="#"
+              >Services</a
+            >
+            <a
+              class="text-md font-medium leading-normal hover:text-forest-green dark:hover:text-primary transition-colors"
+              href="#"
+              >Contact</a
+            >
+          </div>
+          <button
+            class="loginBtn hidden md:flex min-w-[84px] mt-1 cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-[#4a4921] text-[#181811] hover:text-white text-md font-bold leading-normal tracking-[0.015em] hover:brightness-105 transition-all"
+            onclick="window.location.href = './login.html'"
+          >
+            <span class="truncate">Log In</span>
+          </button>
+          <div
+            class="flex md:hidden mt-2 items-center justify-center"
+            id="hamburgerContainer"
+          >
+            <button
+              id="hamburgerMenu"
+              aria-expanded="false"
+              onclick="toggleMobileSidebar()"
+            >
+              <span class="material-symbols-outlined">menu</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden fixed inset-y-0 right-0 w-64 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-2xl z-50 transform translate-x-full transition-transform duration-300 border-l border-white/20 dark:border-gray-700/50"
+      >
+        <div class="p-6">
+          <!-- Close button -->
+          <div class="flex justify-end mb-6">
+            <button id="closeMobileMenu" class="p-2">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+
+          <!-- Menu items -->
+          <nav class="flex flex-col items-center gap-4">
+            <a
+              href="#"
+              class="py-3 px-4 hover:text-forest-green dark:hover:text-primary rounded-lg"
+              >Home</a
+            >
+            <a
+              href="#"
+              class="py-3 px-4 hover:text-forest-green dark:hover:text-primary rounded-lg"
+              >Services</a
+            >
+            <a
+              href="#"
+              class="py-3 px-4 hover:text-forest-green dark:hover:text-primary rounded-lg"
+              >Contact</a
+            >
+            <button
+              class="loginBtn mt-4 py-3 px-4 bg-primary hover:bg-[#4a4921] text-[#181811] hover:text-white rounded-lg font-bold"
+              onclick="window.location.href = './login.html'"
+            >
+              Log in
+            </button>
+          </nav>
+        </div>
+      </div>
+      <!-- Main Content Area -->
+      <main
+        class="flex flex-1 flex-col items-center justify-center py-10 px-4 sm:px-6 lg:px-8"
+      >
+        <div class="w-full max-w-xl">
+          <!-- Progress Bar -->
+          <div class="mb-10 w-full px-4">
+            <div class="flex gap-6 justify-between mb-3">
+              <p
+                class="text-[#111811] dark:text-gray-200 text-sm font-semibold leading-normal uppercase tracking-wider"
+              >
+                Step 3 of 3
+              </p>
+              <span class="text-primary text-sm font-medium"
+                >100% Completed</span
+              >
+            </div>
+            <div
+              class="rounded-full bg-gray-200 dark:bg-gray-700 h-2 overflow-hidden"
+            >
+              <div
+                class="h-full rounded-full bg-primary transition-all duration-500 ease-out"
+                style="width: 100%"
+              ></div>
+            </div>
+          </div>
+          <!-- Success Card -->
+          <div
+            class="bg-white dark:bg-[#1a1a1a] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 p-8 sm:p-12 text-center flex flex-col items-center animate-fade-in-up"
+          >
+            <!-- Success Icon -->
+            <div
+              class="size-20 bg-primary/10 rounded-full flex items-center justify-center mb-6"
+            >
+              <span
+                class="material-symbols-outlined text-primary text-[40px] font-bold"
+                >check</span
+              >
+            </div>
+            <!-- Headings -->
+            <h1
+              class="text-[#111811] dark:text-white text-2xl sm:text-3xl font-bold leading-tight mb-2"
+            >
+              Account Created Successfully
+            </h1>
+            <p
+              class="text-gray-600 dark:text-gray-400 text-base font-normal leading-relaxed max-w-sm mb-8"
+            >
+              Welcome to Olongapo City Waste Management. <br />
+              <!-- Next steps: Check your email inbox for a verification link to
+              activate your full access. -->
+            </p>
+            <!-- Illustration/Graphic -->
+            <div
+              class="w-full max-w-[280px] aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/10 mb-8 flex items-center justify-center relative border border-green-100 dark:border-green-900/30"
+            >
+              <!-- Abstract mail graphic representation -->
+              <span
+                class="material-symbols-outlined text-primary/40 text-[100px]"
+                >person</span
+              >
+              <div
+                class="absolute inset-0 bg-white/10"
+                data-alt="Abstract graphic representing email verification sent"
+              ></div>
+            </div>
+            <!-- Action Button -->
+            <button
+              class="w-full sm:w-auto min-w-[240px] h-12 bg-primary hover:bg-[#4a4921] dark:text-gray-600 hover:text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2 mb-6 cursor-pointer"
+            >
+              <span class="material-symbols-outlined text-[20px]">login</span>
+              <span>Go to Login</span>
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

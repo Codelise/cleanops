@@ -22,6 +22,7 @@
     "serve": "npx live-server public/"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.89.0",
     "@tailwindcss/cli": "^4.1.18",
     "@tailwindcss/postcss": "^4.1.18",
     "cssesc": "^3.0.0",

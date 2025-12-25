@@ -56,7 +56,7 @@
           >
         </div>
         <button
-          class="loginBtn hidden md:flex min-w-[84px] mt-1 cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#181811] text-md font-bold leading-normal tracking-[0.015em] hover:brightness-105 transition-all"
+          class="loginBtn hidden md:flex min-w-[84px] mt-1 cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-[#4a4921] text-[#181811] hover:text-white text-md font-bold leading-normal tracking-[0.015em] hover:brightness-105 transition-all"
           onclick="window.location.href = './login.html'"
         >
           <span class="truncate">Log In</span>
@@ -106,7 +106,7 @@
             >Contact</a
           >
           <button
-            class="loginBtn mt-4 py-3 px-4 bg-primary text-[#181811] rounded-lg font-bold"
+            class="loginBtn mt-4 py-3 px-4 bg-primary hover:bg-[#4a4921] text-[#181811] hover:text-white rounded-lg font-bold"
             onclick="window.location.href = './login.html'"
           >
             Log in
@@ -116,7 +116,7 @@
     </div>
     <!-- Main Content -->
     <main
-      class="flex-1 flex flex-col items-center justify-center mt-20 p-4 sm:p-8"
+      class="flex-1 flex flex-col items-center justify-center lg:mt-10 mt-5 p-4 sm:p-8"
     >
       <div class="w-full max-w-[580px] flex flex-col gap-8">
         <!-- Stepper -->
@@ -200,6 +200,7 @@
                 <button
                   class="absolute right-0 h-full px-4 text-[#617589] dark:text-gray-400 hover:text-[#111418] dark:hover:text-white transition-colors flex items-center justify-center"
                   type="button"
+                  data-target="password"
                 >
                   <span class="material-symbols-outlined text-[20px]"
                     >visibility</span
@@ -213,7 +214,7 @@
                 >
                   <div
                     class="h-full w-0 bg-red-500 transition-all duration-300"
-                    style="width: 100%"
+                    data-bar="1"
                   ></div>
                 </div>
                 <div
@@ -221,7 +222,7 @@
                 >
                   <div
                     class="h-full w-0 bg-yellow-500 transition-all duration-300"
-                    style="width: 0%"
+                    data-bar="2"
                   ></div>
                 </div>
                 <div
@@ -229,7 +230,7 @@
                 >
                   <div
                     class="h-full w-0 bg-green-500 transition-all duration-300"
-                    style="width: 0%"
+                    data-bar="3"
                   ></div>
                 </div>
                 <div
@@ -237,11 +238,14 @@
                 >
                   <div
                     class="h-full w-0 bg-green-600 transition-all duration-300"
-                    style="width: 0%"
+                    data-bar="4"
                   ></div>
                 </div>
               </div>
-              <p class="text-md text-[#617589] dark:text-gray-400 mt-0.5">
+              <p
+                class="text-md text-[#617589] dark:text-gray-400 mt-0.5"
+                id="passwordStrengthText"
+              >
                 Password must be at least 8 characters.
               </p>
             </div>
@@ -263,9 +267,10 @@
                 <button
                   class="absolute right-0 h-full px-4 text-[#617589] dark:text-gray-400 hover:text-[#111418] dark:hover:text-white transition-colors flex items-center justify-center"
                   type="button"
+                  data-target="confirm-password"
                 >
                   <span class="material-symbols-outlined text-[20px]"
-                    >visibility_off</span
+                    >visibility</span
                   >
                 </button>
               </div>
@@ -274,6 +279,7 @@
             <button
               class="mt-4 flex w-full items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-[#4a4921] dark:text-gray-600 hover:text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors shadow-sm focus:outline-none focus:ring-4 focus:ring-primary/20 cursor-pointer"
               type="submit"
+              id="firstNextBtn"
             >
               Next Step
             </button>
@@ -321,7 +327,8 @@
         class="absolute top-[40%] -left-[10%] w-[500px] h-[500px] rounded-full bg-blue-50 blur-[80px]"
       ></div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="/src/js/index.js"></script>
+    <script type="module" src="../js/register-step1.js"></script>
   </body>
 </html>
