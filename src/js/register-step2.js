@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!registrationData || !registrationData.step1) {
     alert("Please complete Step 1 first");
-    window.location.href = "./auth/register.html";
+    window.location.href = "../auth/register.html";
     return;
   }
 
