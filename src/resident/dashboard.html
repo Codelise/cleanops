@@ -1,11 +1,852 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="light" lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CleanOps Olongapo - Resident Dashboard</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700;800&amp;family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/output.css" />
   </head>
-  <body>
-    <h1>Hello World</h1>
+  <body
+    class="bg-background-light dark:bg-background-dark text-[#111811] dark:text-white transition-colors duration-200"
+  >
+    <div class="flex h-screen w-full overflow-hidden">
+      <!-- Sidebar Navigation (Desktop) -->
+      <aside
+        class="hidden lg:flex flex-col w-64 bg-white dark:bg-[#1a2e1a] border-r border-[#e5e7eb] dark:border-[#2a402a] flex-shrink-0"
+      >
+        <div class="p-6 flex items-center gap-3">
+          <div class="bg-primary/10 rounded-full p-2">
+            <span class="material-symbols-outlined text-primary text-3xl"
+              >recycling</span
+            >
+          </div>
+          <div>
+            <h1
+              class="text-lg font-bold text-[#111811] dark:text-white leading-tight"
+            >
+              CleanOps
+            </h1>
+            <p class="text-xs text-[#618961] font-medium">Olongapo City</p>
+          </div>
+        </div>
+        <nav class="flex-1 px-4 py-4 space-y-2 overflow-y-auto">
+          <a
+            class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/10 text-primary font-semibold"
+            href="#"
+          >
+            <span class="material-symbols-outlined">dashboard</span>
+            <span>Dashboard</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors font-medium"
+            href="#"
+          >
+            <span class="material-symbols-outlined">calendar_month</span>
+            <span>Schedule</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors font-medium"
+            href="#"
+          >
+            <span class="material-symbols-outlined">history</span>
+            <span>My Reports</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors font-medium"
+            href="#"
+          >
+            <span class="material-symbols-outlined">map</span>
+            <span>Map Tracker</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors font-medium"
+            href="#"
+          >
+            <span class="material-symbols-outlined">school</span>
+            <span>Waste Guide</span>
+          </a>
+          <div class="pt-6 mt-6 border-t border-gray-100 dark:border-white/10">
+            <p
+              class="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2"
+            >
+              Account
+            </p>
+            <a
+              class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors font-medium"
+              href="#"
+            >
+              <span class="material-symbols-outlined">settings</span>
+              <span>Settings</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors font-medium"
+              href="#"
+            >
+              <span class="material-symbols-outlined">help</span>
+              <span>Support</span>
+            </a>
+          </div>
+        </nav>
+        <div class="p-4 border-t border-[#e5e7eb] dark:border-[#2a402a]">
+          <div
+            class="flex items-center gap-3 p-2 rounded-xl bg-gray-50 dark:bg-white/5"
+          >
+            <div
+              class="size-10 rounded-full bg-cover bg-center"
+              data-alt="User profile picture of Juan"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBaU7kiJFvcbAWQl-vvRyypTjgennPLsngaJ_fIqpva1HwIaZtOLBQzkqVXKPSKcKNR7qR7YzlgXjEIHu0S5K7fiLn7emzVl55xBXtEPlUqhiAG4z8y6n2AH3S5nH6WRL_2u5p0mSxmnVAd7Lok6VhwAiVNJdX5mrYwiB-JOFPCQy2L94rMEM3skR0XUinMcPjt_3U0uQrRPXtogeLoEJfBdgK0-_myMVuA_wiE1aeeOTJLXVt3Qdolr-9D4gHTye_kh_OYTMvJZAY');
+              "
+            ></div>
+            <div class="flex flex-col min-w-0">
+              <p
+                class="text-sm font-semibold text-[#111811] dark:text-white truncate"
+              >
+                Juan Dela Cruz
+              </p>
+              <p class="text-xs text-gray-500 truncate">Resident</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!-- Main Content Area -->
+      <main class="flex-1 flex flex-col h-screen overflow-hidden relative">
+        <!-- Mobile Header (Visible only on small screens) -->
+        <header
+          class="lg:hidden flex items-center justify-between px-4 py-3 bg-white dark:bg-[#1a2e1a] border-b border-gray-200 dark:border-white/10 shrink-0"
+        >
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary"
+              >recycling</span
+            >
+            <span class="font-bold text-[#111811] dark:text-white"
+              >CleanOps</span
+            >
+          </div>
+          <button class="p-2 text-gray-600 dark:text-gray-300">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </header>
+        <!-- Top Bar (Desktop) -->
+        <header
+          class="hidden lg:flex items-center justify-between px-8 py-5 bg-white/50 backdrop-blur-sm dark:bg-[#1a2e1a]/50 sticky top-0 z-20 border-b border-transparent"
+        >
+          <div>
+            <h2 class="text-2xl font-bold text-[#111811] dark:text-white">
+              Dashboard
+            </h2>
+          </div>
+          <div class="flex items-center gap-4">
+            <div
+              class="flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-white/5 rounded-full border border-gray-100 dark:border-white/10 shadow-sm"
+            >
+              <span class="material-symbols-outlined text-red-500 text-[20px]"
+                >location_on</span
+              >
+              <span class="text-sm font-medium text-gray-700 dark:text-gray-200"
+                >Barangay New Cabalan</span
+              >
+            </div>
+            <button
+              class="relative p-2 bg-white dark:bg-white/5 rounded-full hover:bg-gray-50 transition-colors shadow-sm border border-gray-100 dark:border-white/10"
+            >
+              <span
+                class="material-symbols-outlined text-gray-600 dark:text-gray-300"
+                >notifications</span
+              >
+              <span
+                class="absolute top-0 right-0 size-2.5 bg-red-500 rounded-full border-2 border-white dark:border-[#1a2e1a]"
+              ></span>
+            </button>
+          </div>
+        </header>
+        <!-- Scrollable Content -->
+        <div class="flex-1 overflow-y-auto p-4 lg:p-8">
+          <div class="max-w-7xl mx-auto space-y-6">
+            <!-- Welcome & Emergency Alert Section -->
+            <section class="flex flex-col gap-4">
+              <div
+                class="flex flex-col lg:flex-row lg:items-end justify-between gap-4"
+              >
+                <div>
+                  <h2
+                    class="text-3xl font-black text-[#111811] dark:text-white tracking-tight"
+                  >
+                    Good morning, Juan!
+                  </h2>
+                  <p class="text-[#618961] dark:text-[#8abf8a] mt-1">
+                    Here's what's happening with waste collection in your area
+                    today.
+                  </p>
+                </div>
+              </div>
+              <!-- Alert Banner (Conditional) -->
+              <div
+                class="bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-900/30 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 animate-fade-in"
+              >
+                <div class="flex items-start sm:items-center gap-3">
+                  <div
+                    class="p-2 bg-red-100 dark:bg-red-800/30 rounded-full text-red-600 dark:text-red-400 shrink-0"
+                  >
+                    <span class="material-symbols-outlined">warning</span>
+                  </div>
+                  <div>
+                    <p
+                      class="font-bold text-red-900 dark:text-red-100 text-sm sm:text-base"
+                    >
+                      Typhoon Warning Alert
+                    </p>
+                    <p class="text-red-700 dark:text-red-300 text-sm">
+                      Waste collection suspended due to heavy rainfall. Stay
+                      safe.
+                    </p>
+                  </div>
+                </div>
+                <button
+                  class="w-full sm:w-auto px-4 py-2 bg-white dark:bg-white/10 text-red-700 dark:text-red-200 text-sm font-medium rounded-lg border border-red-100 dark:border-red-900/30 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
+                >
+                  Dismiss
+                </button>
+              </div>
+            </section>
+            <!-- Main Grid Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              <!-- Left Column (Primary Actions & Info) - Span 8 columns -->
+              <div class="lg:col-span-8 flex flex-col gap-6">
+                <!-- Critical Info Card (Prominent) -->
+                <div
+                  class="bg-white dark:bg-[#1a2e1a] rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 overflow-hidden relative group"
+                >
+                  <div
+                    class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[120px] text-primary"
+                      >recycling</span
+                    >
+                  </div>
+                  <div class="p-6 sm:p-8 relative z-10">
+                    <div class="flex justify-between items-start mb-6">
+                      <div>
+                        <span
+                          class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-2"
+                        >
+                          <span
+                            class="size-2 rounded-full bg-primary animate-pulse"
+                          ></span>
+                          Today's Collection
+                        </span>
+                        <h3
+                          class="text-3xl sm:text-4xl font-black text-[#111811] dark:text-white mt-1"
+                        >
+                          Biodegradable
+                        </h3>
+                      </div>
+                      <div class="hidden sm:block text-right">
+                        <p
+                          class="text-sm text-gray-500 dark:text-gray-400 font-medium"
+                        >
+                          Status
+                        </p>
+                        <p class="text-lg font-bold text-primary">
+                          Truck en route
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col sm:flex-row items-center gap-6 mb-8"
+                    >
+                      <div
+                        class="flex-1 w-full bg-gray-50 dark:bg-white/5 p-4 rounded-xl border border-gray-100 dark:border-white/5 flex items-center gap-4"
+                      >
+                        <div
+                          class="p-3 bg-white dark:bg-white/10 rounded-lg shadow-sm text-[#111811] dark:text-white"
+                        >
+                          <span class="material-symbols-outlined"
+                            >schedule</span
+                          >
+                        </div>
+                        <div>
+                          <p
+                            class="text-xs text-gray-500 uppercase font-semibold"
+                          >
+                            Time Window
+                          </p>
+                          <p
+                            class="text-xl font-bold text-[#111811] dark:text-white"
+                          >
+                            8:00 AM - 10:00 AM
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex-1 w-full">
+                        <div
+                          class="flex justify-between text-sm mb-2 font-medium"
+                        >
+                          <span class="text-gray-600 dark:text-gray-300"
+                            >Starts in 2 hours</span
+                          >
+                          <span class="text-primary">75%</span>
+                        </div>
+                        <div
+                          class="h-3 w-full bg-gray-100 dark:bg-white/10 rounded-full overflow-hidden"
+                        >
+                          <div
+                            class="h-full bg-primary w-3/4 rounded-full"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex gap-3">
+                      <button
+                        class="flex-1 sm:flex-none px-6 py-3 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                      >
+                        <span class="material-symbols-outlined"
+                          >notifications_active</span
+                        >
+                        Set Reminder
+                      </button>
+                      <button
+                        class="px-6 py-3 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-200 font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-white/10 transition-colors"
+                      >
+                        Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Quick Actions Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                  <button
+                    class="group flex flex-col items-center justify-center gap-3 p-4 bg-white dark:bg-[#1a2e1a] rounded-xl shadow-sm border border-gray-100 dark:border-white/5 hover:border-accent hover:shadow-md transition-all"
+                  >
+                    <div
+                      class="p-3 rounded-full bg-orange-50 dark:bg-orange-900/20 text-accent group-hover:scale-110 transition-transform"
+                    >
+                      <span class="material-symbols-outlined text-3xl"
+                        >photo_camera</span
+                      >
+                    </div>
+                    <span
+                      class="font-semibold text-sm text-[#111811] dark:text-white"
+                      >Report Issue</span
+                    >
+                  </button>
+                  <button
+                    class="group flex flex-col items-center justify-center gap-3 p-4 bg-white dark:bg-[#1a2e1a] rounded-xl shadow-sm border border-gray-100 dark:border-white/5 hover:border-secondary hover:shadow-md transition-all"
+                  >
+                    <div
+                      class="p-3 rounded-full bg-blue-50 dark:bg-blue-900/20 text-secondary group-hover:scale-110 transition-transform"
+                    >
+                      <span class="material-symbols-outlined text-3xl"
+                        >calendar_add_on</span
+                      >
+                    </div>
+                    <span
+                      class="font-semibold text-sm text-[#111811] dark:text-white"
+                      >Request Pickup</span
+                    >
+                  </button>
+                  <button
+                    class="group flex flex-col items-center justify-center gap-3 p-4 bg-white dark:bg-[#1a2e1a] rounded-xl shadow-sm border border-gray-100 dark:border-white/5 hover:border-primary hover:shadow-md transition-all"
+                  >
+                    <div
+                      class="p-3 rounded-full bg-green-50 dark:bg-green-900/20 text-primary group-hover:scale-110 transition-transform"
+                    >
+                      <span class="material-symbols-outlined text-3xl"
+                        >location_on</span
+                      >
+                    </div>
+                    <span
+                      class="font-semibold text-sm text-[#111811] dark:text-white"
+                      >Live Tracker</span
+                    >
+                  </button>
+                  <button
+                    class="group flex flex-col items-center justify-center gap-3 p-4 bg-white dark:bg-[#1a2e1a] rounded-xl shadow-sm border border-gray-100 dark:border-white/5 hover:border-gray-300 hover:shadow-md transition-all"
+                  >
+                    <div
+                      class="p-3 rounded-full bg-gray-50 dark:bg-white/10 text-gray-600 dark:text-gray-300 group-hover:scale-110 transition-transform"
+                    >
+                      <span class="material-symbols-outlined text-3xl"
+                        >calendar_month</span
+                      >
+                    </div>
+                    <span
+                      class="font-semibold text-sm text-[#111811] dark:text-white"
+                      >View Schedule</span
+                    >
+                  </button>
+                </div>
+                <!-- Live Map Mini-View -->
+                <div
+                  class="bg-white dark:bg-[#1a2e1a] rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 p-4"
+                >
+                  <div class="flex justify-between items-center mb-4 px-2">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-primary"
+                        >local_shipping</span
+                      >
+                      <h3 class="font-bold text-[#111811] dark:text-white">
+                        Live Route Tracker
+                      </h3>
+                    </div>
+                    <span
+                      class="text-sm font-medium text-primary bg-primary/10 px-2 py-1 rounded-lg"
+                      >Truck 5 • 15 mins away</span
+                    >
+                  </div>
+                  <div
+                    class="relative h-48 sm:h-64 rounded-xl overflow-hidden group"
+                  >
+                    <div
+                      class="absolute inset-0 bg-gray-200 bg-cover bg-center"
+                      data-alt="Stylized map showing city streets of Olongapo with a truck icon overlay"
+                      data-location="Olongapo City"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA15KwXGW3s7EIn-Sr4QhLJAV680WIpPme0fyRuZ6m8gnZmxbrmzJJjwj6inuU1pGG8V6xWd75MbjR--Sht0KE1kNOy4kE4jO96nNuAFp0Ek_eMHcOc5URGj3fY8FMeP7FudFve8A6Hdz62jyxoxEG_WnxMudAYXLwOyRj8gUW80rtAcGm4Tw61hbDGmD7OTRl89K1EPiUpYsfioprlKAIiCmuYvGD8aDGdAZ0lgUbW7JqIPvok4kbuJibu88lsBRhOGkJy0FuS4eE');
+                      "
+                    ></div>
+                    <!-- Overlay Elements mimicking Google Maps UI -->
+                    <div class="absolute bottom-4 right-4 flex flex-col gap-2">
+                      <button
+                        class="bg-white text-gray-700 p-2 rounded-lg shadow-md hover:bg-gray-50"
+                      >
+                        <span class="material-symbols-outlined">add</span>
+                      </button>
+                      <button
+                        class="bg-white text-gray-700 p-2 rounded-lg shadow-md hover:bg-gray-50"
+                      >
+                        <span class="material-symbols-outlined">remove</span>
+                      </button>
+                    </div>
+                    <div
+                      class="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors pointer-events-none"
+                    ></div>
+                    <button
+                      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-[#1a2e1a] text-[#111811] dark:text-white px-4 py-2 rounded-lg font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0"
+                    >
+                      View Full Map
+                    </button>
+                  </div>
+                </div>
+                <!-- Recent Activity Feed -->
+                <div
+                  class="bg-white dark:bg-[#1a2e1a] rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 p-6"
+                >
+                  <div class="flex justify-between items-center mb-6">
+                    <h3
+                      class="text-lg font-bold text-[#111811] dark:text-white"
+                    >
+                      Recent Activity
+                    </h3>
+                    <a
+                      class="text-primary text-sm font-semibold hover:underline"
+                      href="#"
+                      >See All</a
+                    >
+                  </div>
+                  <div class="space-y-4">
+                    <div class="flex gap-4 items-start">
+                      <div
+                        class="mt-1 size-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-primary shrink-0"
+                      >
+                        <span class="material-symbols-outlined text-sm"
+                          >check_circle</span
+                        >
+                      </div>
+                      <div
+                        class="flex-1 pb-4 border-b border-gray-100 dark:border-white/5"
+                      >
+                        <div class="flex justify-between items-start">
+                          <p
+                            class="font-semibold text-[#111811] dark:text-white"
+                          >
+                            Report #1234 Resolved
+                          </p>
+                          <span class="text-xs text-gray-400">2h ago</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-1">
+                          Your report about uncollected waste has been
+                          addressed.
+                        </p>
+                        <span
+                          class="inline-block mt-2 text-xs font-bold text-green-700 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded border border-green-100 dark:border-green-900/30"
+                          >Resolved</span
+                        >
+                      </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                      <div
+                        class="mt-1 size-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-secondary shrink-0"
+                      >
+                        <span class="material-symbols-outlined text-sm"
+                          >event_available</span
+                        >
+                      </div>
+                      <div
+                        class="flex-1 pb-4 border-b border-gray-100 dark:border-white/5"
+                      >
+                        <div class="flex justify-between items-start">
+                          <p
+                            class="font-semibold text-[#111811] dark:text-white"
+                          >
+                            Pickup Confirmed
+                          </p>
+                          <span class="text-xs text-gray-400">Yesterday</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-1">
+                          Bulky waste pickup scheduled for Monday, Oct 24.
+                        </p>
+                        <span
+                          class="inline-block mt-2 text-xs font-bold text-blue-700 bg-blue-50 dark:bg-blue-900/20 px-2 py-0.5 rounded border border-blue-100 dark:border-blue-900/30"
+                          >Confirmed</span
+                        >
+                      </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                      <div
+                        class="mt-1 size-8 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-accent shrink-0"
+                      >
+                        <span class="material-symbols-outlined text-sm"
+                          >mail</span
+                        >
+                      </div>
+                      <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                          <p
+                            class="font-semibold text-[#111811] dark:text-white"
+                          >
+                            Message from LGU
+                          </p>
+                          <span class="text-xs text-gray-400">2d ago</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-1">
+                          Reminder: No collection on public holiday next week.
+                        </p>
+                        <span
+                          class="inline-block mt-2 text-xs font-bold text-orange-700 bg-orange-50 dark:bg-orange-900/20 px-2 py-0.5 rounded border border-orange-100 dark:border-orange-900/30"
+                          >New</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Right Column (Stats, Guide, Schedule) - Span 4 columns -->
+              <div class="lg:col-span-4 flex flex-col gap-6">
+                <!-- Personal Stats Section -->
+                <div
+                  class="bg-white dark:bg-[#1a2e1a] rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 p-6"
+                >
+                  <h3
+                    class="text-lg font-bold text-[#111811] dark:text-white mb-4"
+                  >
+                    Your Impact
+                  </h3>
+                  <div class="space-y-4">
+                    <div
+                      class="p-4 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/5"
+                    >
+                      <div class="flex justify-between items-center mb-2">
+                        <div
+                          class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200"
+                        >
+                          <span
+                            class="material-symbols-outlined text-accent text-lg"
+                            >description</span
+                          >
+                          Reports
+                        </div>
+                        <span class="text-xs font-medium text-gray-500"
+                          >Month</span
+                        >
+                      </div>
+                      <div class="flex items-end gap-2 mb-1">
+                        <span
+                          class="text-2xl font-bold text-[#111811] dark:text-white"
+                          >5</span
+                        >
+                        <span class="text-sm text-gray-500 mb-1"
+                          >submitted</span
+                        >
+                      </div>
+                      <div
+                        class="w-full bg-gray-200 dark:bg-white/10 rounded-full h-1.5 mb-1"
+                      >
+                        <div
+                          class="bg-accent h-1.5 rounded-full"
+                          style="width: 80%"
+                        ></div>
+                      </div>
+                      <p class="text-xs text-gray-500 text-right">4 resolved</p>
+                    </div>
+                    <div
+                      class="p-4 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/5"
+                    >
+                      <div class="flex justify-between items-center mb-2">
+                        <div
+                          class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200"
+                        >
+                          <span
+                            class="material-symbols-outlined text-secondary text-lg"
+                            >local_shipping</span
+                          >
+                          Collections
+                        </div>
+                        <span class="text-xs font-medium text-gray-500"
+                          >Total</span
+                        >
+                      </div>
+                      <div class="flex items-end gap-2 mb-1">
+                        <span
+                          class="text-2xl font-bold text-[#111811] dark:text-white"
+                          >12</span
+                        >
+                        <span class="text-sm text-gray-500 mb-1"
+                          >completed</span
+                        >
+                      </div>
+                      <div
+                        class="w-full bg-gray-200 dark:bg-white/10 rounded-full h-1.5 mb-1"
+                      >
+                        <div
+                          class="bg-secondary h-1.5 rounded-full"
+                          style="width: 100%"
+                        ></div>
+                      </div>
+                      <p class="text-xs text-gray-500 text-right">0 missed</p>
+                    </div>
+                    <div
+                      class="p-4 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/5"
+                    >
+                      <div class="flex justify-between items-center mb-2">
+                        <div
+                          class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-200"
+                        >
+                          <span
+                            class="material-symbols-outlined text-primary text-lg"
+                            >eco</span
+                          >
+                          Eco-Points
+                        </div>
+                        <span
+                          class="text-xs font-medium text-primary bg-primary/10 px-2 rounded-full"
+                          >Level 2</span
+                        >
+                      </div>
+                      <div class="flex items-end gap-2 mb-1">
+                        <span
+                          class="text-2xl font-bold text-[#111811] dark:text-white"
+                          >150</span
+                        >
+                        <span class="text-sm text-gray-500 mb-1">pts</span>
+                      </div>
+                      <div
+                        class="w-full bg-gray-200 dark:bg-white/10 rounded-full h-1.5"
+                      >
+                        <div
+                          class="bg-primary h-1.5 rounded-full"
+                          style="width: 45%"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Upcoming Schedule -->
+                <div
+                  class="bg-white dark:bg-[#1a2e1a] rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 p-6"
+                >
+                  <div class="flex justify-between items-center mb-4">
+                    <h3
+                      class="text-lg font-bold text-[#111811] dark:text-white"
+                    >
+                      Upcoming
+                    </h3>
+                    <button
+                      class="text-sm text-gray-500 hover:text-primary transition-colors flex items-center gap-1"
+                    >
+                      Full Week
+                      <span class="material-symbols-outlined text-sm"
+                        >expand_more</span
+                      >
+                    </button>
+                  </div>
+                  <div class="space-y-3">
+                    <div
+                      class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group cursor-pointer border border-transparent hover:border-gray-100 dark:hover:border-white/5"
+                    >
+                      <div
+                        class="bg-gray-100 dark:bg-white/10 w-12 h-12 rounded-lg flex flex-col items-center justify-center shrink-0"
+                      >
+                        <span class="text-xs text-gray-500 font-medium"
+                          >WED</span
+                        >
+                        <span class="font-bold text-[#111811] dark:text-white"
+                          >26</span
+                        >
+                      </div>
+                      <div class="flex-1">
+                        <p
+                          class="font-semibold text-[#111811] dark:text-white text-sm"
+                        >
+                          Recyclables
+                        </p>
+                        <p class="text-xs text-gray-500">8:00 AM - 10:00 AM</p>
+                      </div>
+                      <div class="size-2 rounded-full bg-secondary"></div>
+                    </div>
+                    <div
+                      class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group cursor-pointer border border-transparent hover:border-gray-100 dark:hover:border-white/5"
+                    >
+                      <div
+                        class="bg-gray-100 dark:bg-white/10 w-12 h-12 rounded-lg flex flex-col items-center justify-center shrink-0"
+                      >
+                        <span class="text-xs text-gray-500 font-medium"
+                          >THU</span
+                        >
+                        <span class="font-bold text-[#111811] dark:text-white"
+                          >27</span
+                        >
+                      </div>
+                      <div class="flex-1">
+                        <p
+                          class="font-semibold text-[#111811] dark:text-white text-sm"
+                        >
+                          Biodegradable
+                        </p>
+                        <p class="text-xs text-gray-500">8:00 AM - 10:00 AM</p>
+                      </div>
+                      <div class="size-2 rounded-full bg-primary"></div>
+                    </div>
+                    <div
+                      class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group cursor-pointer border border-transparent hover:border-gray-100 dark:hover:border-white/5"
+                    >
+                      <div
+                        class="bg-gray-100 dark:bg-white/10 w-12 h-12 rounded-lg flex flex-col items-center justify-center shrink-0"
+                      >
+                        <span class="text-xs text-gray-500 font-medium"
+                          >FRI</span
+                        >
+                        <span class="font-bold text-[#111811] dark:text-white"
+                          >28</span
+                        >
+                      </div>
+                      <div class="flex-1">
+                        <p
+                          class="font-semibold text-[#111811] dark:text-white text-sm"
+                        >
+                          Residual
+                        </p>
+                        <p class="text-xs text-gray-500">1:00 PM - 3:00 PM</p>
+                      </div>
+                      <div
+                        class="size-2 rounded-full bg-gray-800 dark:bg-gray-400"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Waste Guidance Accordion -->
+                <div
+                  class="bg-white dark:bg-[#1a2e1a] rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 p-6"
+                >
+                  <h3
+                    class="text-lg font-bold text-[#111811] dark:text-white mb-4"
+                  >
+                    Proper Segregation
+                  </h3>
+                  <div class="space-y-3">
+                    <!-- Green Bin -->
+                    <div
+                      class="border border-green-200 dark:border-green-900/50 rounded-xl overflow-hidden"
+                    >
+                      <div
+                        class="bg-green-50 dark:bg-green-900/20 px-4 py-3 flex items-center justify-between cursor-pointer"
+                      >
+                        <div class="flex items-center gap-3">
+                          <div class="size-3 rounded-full bg-green-500"></div>
+                          <span
+                            class="font-bold text-green-800 dark:text-green-100 text-sm"
+                            >Biodegradable</span
+                          >
+                        </div>
+                        <span
+                          class="material-symbols-outlined text-green-700 text-sm"
+                          >expand_more</span
+                        >
+                      </div>
+                      <div class="p-4 bg-white dark:bg-[#1a2e1a]">
+                        <ul
+                          class="text-xs text-gray-600 dark:text-gray-300 list-disc list-inside space-y-1"
+                        >
+                          <li>Food scraps &amp; leftovers</li>
+                          <li>Garden waste (leaves, grass)</li>
+                          <li>Paper towels &amp; napkins</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- Blue Bin -->
+                    <div
+                      class="border border-blue-200 dark:border-blue-900/50 rounded-xl overflow-hidden opacity-80 hover:opacity-100 transition-opacity"
+                    >
+                      <div
+                        class="bg-blue-50 dark:bg-blue-900/20 px-4 py-3 flex items-center justify-between cursor-pointer"
+                      >
+                        <div class="flex items-center gap-3">
+                          <div class="size-3 rounded-full bg-blue-500"></div>
+                          <span
+                            class="font-bold text-blue-800 dark:text-blue-100 text-sm"
+                            >Recyclable</span
+                          >
+                        </div>
+                        <span
+                          class="material-symbols-outlined text-blue-700 text-sm"
+                          >chevron_right</span
+                        >
+                      </div>
+                    </div>
+                    <!-- Black Bin -->
+                    <div
+                      class="border border-gray-200 dark:border-gray-700/50 rounded-xl overflow-hidden opacity-80 hover:opacity-100 transition-opacity"
+                    >
+                      <div
+                        class="bg-gray-100 dark:bg-gray-800/30 px-4 py-3 flex items-center justify-between cursor-pointer"
+                      >
+                        <div class="flex items-center gap-3">
+                          <div
+                            class="size-3 rounded-full bg-gray-800 dark:bg-gray-400"
+                          ></div>
+                          <span
+                            class="font-bold text-gray-800 dark:text-gray-200 text-sm"
+                            >Residual</span
+                          >
+                        </div>
+                        <span
+                          class="material-symbols-outlined text-gray-700 text-sm"
+                          >chevron_right</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer class="mt-8 pb-8 text-center text-sm text-gray-400">
+              <p>© 2023 CleanOps Olongapo. All rights reserved.</p>
+            </footer>
+          </div>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
