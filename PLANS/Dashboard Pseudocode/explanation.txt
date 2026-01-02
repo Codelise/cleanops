@@ -1,0 +1,111 @@
+Why Object-Oriented Programming (OOP) in JavaScript?
+Decision: Use OOP for complex state management
+Alternatives considered: Functional Programming, Procedural
+Reasons:
+✅ Encapsulation: Each class manages its own state
+✅ Reusability: Can extend DashboardRenderer for admin/collector dashboards
+✅ Maintainability: Clear separation of concerns
+✅ Real-world mapping: "DataManager" manages data, "Renderer" manages UI
+✅ Capstone showcase: Demonstrates advanced JS patterns
+
+auth-check.js
+- Purpose: Gatekeeper for authenticated access
+Why separate file:
+✅ Security: Centralized auth logic
+✅ Reusable: Other pages can use same check
+✅ Clean main file: No auth boilerplate
+✅ Error handling: All auth errors handled in one place
+
+What it DOESN'T do:
+❌ Not responsible for UI
+❌ Not handling data fetching
+❌ Not managing user state beyond authentication
+
+data-fetcher.js (DashboardDataManager class)
+Purpose: Single source of truth for dashboard data
+Key design decisions:
+1. Caching strategy:
+// WHY: Reduces Supabase calls, faster UI
+IF cachedData EXISTS AND recent:
+    USE cachedData  // Fast
+ELSE:
+    FETCH fresh data  // Accurate
+
+2. Batch fetching vs individual calls:
+// Batch: fetchAllDashboardData()
+// Pros: One network request, consistent data snapshot
+// Cons: Slower if one part fails
+
+// Individual: fetchTodaySchedule(), fetchUserReports()
+// Pros: Faster initial render, independent updates
+// Cons: Multiple requests, potential inconsistency
+
+// CHOSEN: Batch for initial load, individual for updates
+
+3. Data processing in class vs database:
+// Database processing (SQL):
+// Pros: Faster, less client processing
+// Cons: Complex queries, vendor-specific
+
+// Client processing (JS):
+// Pros: Flexible, reusable logic
+// Cons: Slower for large datasets
+
+// CHOSEN: Client-side for flexibility
+
+ui-renderer.js (DashboardRenderer class)
+Purpose: Pure UI rendering, no business logic
+Separation of concerns:
+Data Layer (data-fetcher.js) → 
+    ↓ Raw data
+UI Layer (ui-renderer.js) → 
+    ↓ Rendered HTML
+Event Layer (event-handlers.js) → 
+    ↓ User interactions
+
+Why this separation:
+// ❌ BAD (coupled):
+function renderDashboard() {
+    fetchData()  // Data logic
+    .then(data => {
+        updateUI(data)  // UI logic
+        setupEvents()   // Event logic
+    })
+}
+
+// ✅ GOOD (decoupled):
+dataManager.fetchData()  // Only data
+.then(data => {
+    renderer.render(data)  // Only UI
+    handlers.setup()       // Only events
+})
+
+event-handlers.js
+Purpose: Handle user interactions
+Design pattern: Command Pattern
+// Each handler is a "command"
+handleReportIssue()  // Opens modal, submits data
+handleRequestPickup() // Different flow, same pattern
+handleSetReminder()   // Browser notifications
+
+realtime-updates.js
+Purpose: Live updates without page refresh
+Why Supabase Realtime:
+WebSocket Alternative:
+❌ Need server setup
+❌ Complex to implement
+❌ More code
+
+Supabase Realtime:
+✅ Built-in
+✅ Simple subscription model
+✅ Free tier sufficient for capstone
+
+// Option 1: Full refresh on any change
+// Simple but heavy
+
+// Option 2: Targeted updates (CHOSEN)
+// Lightweight, precise
+reportUpdated → updateReportList()
+newAlert → showNotification()
+scheduleChanged → updateTodayCard()
