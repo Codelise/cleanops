@@ -111,6 +111,7 @@
             ></div>
             <div class="flex flex-col min-w-0">
               <p
+                id="avatarName"
                 class="text-sm font-semibold text-[#111811] dark:text-white truncate"
               >
                 Juan Dela Cruz
@@ -154,7 +155,9 @@
               <span class="material-symbols-outlined text-red-500 text-[20px]"
                 >location_on</span
               >
-              <span class="text-sm font-medium text-gray-700 dark:text-gray-200"
+              <span
+                id="barangayBadge"
+                class="text-sm font-medium text-gray-700 dark:text-gray-200"
                 >Barangay New Cabalan</span
               >
             </div>
@@ -181,6 +184,7 @@
               >
                 <div>
                   <h2
+                    id="welcomeGreeting"
                     class="text-3xl font-black text-[#111811] dark:text-white tracking-tight"
                   >
                     Good morning, Juan!
@@ -193,6 +197,7 @@
               </div>
               <!-- Alert Banner (Conditional) -->
               <div
+                id="alert-banner"
                 class="bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-900/30 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 animate-fade-in"
               >
                 <div class="flex items-start sm:items-center gap-3">
@@ -203,17 +208,22 @@
                   </div>
                   <div>
                     <p
+                      id="alert-title"
                       class="font-bold text-red-900 dark:text-red-100 text-sm sm:text-base"
                     >
                       Typhoon Warning Alert
                     </p>
-                    <p class="text-red-700 dark:text-red-300 text-sm">
+                    <p
+                      id="alert-message"
+                      class="text-red-700 dark:text-red-300 text-sm"
+                    >
                       Waste collection suspended due to heavy rainfall. Stay
                       safe.
                     </p>
                   </div>
                 </div>
                 <button
+                  id="dismiss-alert"
                   class="w-full sm:w-auto px-4 py-2 bg-white dark:bg-white/10 text-red-700 dark:text-red-200 text-sm font-medium rounded-lg border border-red-100 dark:border-red-900/30 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
                 >
                   Dismiss
@@ -248,6 +258,7 @@
                           Today's Collection
                         </span>
                         <h3
+                          id="wasteType"
                           class="text-3xl sm:text-4xl font-black text-[#111811] dark:text-white mt-1"
                         >
                           Biodegradable
@@ -259,7 +270,10 @@
                         >
                           Status
                         </p>
-                        <p class="text-lg font-bold text-primary">
+                        <p
+                          id="collectionStatus"
+                          class="text-lg font-bold text-primary"
+                        >
                           Truck en route
                         </p>
                       </div>
@@ -284,6 +298,7 @@
                             Time Window
                           </p>
                           <p
+                            id="timeWindow"
                             class="text-xl font-bold text-[#111811] dark:text-white"
                           >
                             8:00 AM - 10:00 AM
@@ -300,9 +315,11 @@
                           <span class="text-primary">75%</span>
                         </div>
                         <div
+                          id="progressBar"
                           class="h-3 w-full bg-gray-100 dark:bg-white/10 rounded-full overflow-hidden"
                         >
                           <div
+                            id="progressText"
                             class="h-full bg-primary w-3/4 rounded-full"
                           ></div>
                         </div>
@@ -310,6 +327,7 @@
                     </div>
                     <div class="flex gap-3">
                       <button
+                        id="setReminderBtn"
                         class="flex-1 sm:flex-none px-6 py-3 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
                       >
                         <span class="material-symbols-outlined"
@@ -326,18 +344,23 @@
                   </div>
                 </div>
                 <!-- Quick Actions Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div
+                  id="quick-actions-grid"
+                  class="grid grid-cols-2 sm:grid-cols-4 gap-4"
+                >
                   <button
                     class="group flex flex-col items-center justify-center gap-3 p-4 bg-white dark:bg-[#1a2e1a] rounded-xl shadow-sm border border-gray-100 dark:border-white/5 hover:border-accent hover:shadow-md transition-all"
                   >
                     <div
                       class="p-3 rounded-full bg-orange-50 dark:bg-orange-900/20 text-accent group-hover:scale-110 transition-transform"
                     >
-                      <span class="material-symbols-outlined text-3xl"
+                      <span
+                        class="material-symbols-outlined text-3xl cursor-pointer"
                         >photo_camera</span
                       >
                     </div>
                     <span
+                      id="report-issue"
                       class="font-semibold text-sm text-[#111811] dark:text-white"
                       >Report Issue</span
                     >
@@ -348,11 +371,13 @@
                     <div
                       class="p-3 rounded-full bg-blue-50 dark:bg-blue-900/20 text-secondary group-hover:scale-110 transition-transform"
                     >
-                      <span class="material-symbols-outlined text-3xl"
+                      <span
+                        class="material-symbols-outlined text-3xl cursor-pointer"
                         >calendar_add_on</span
                       >
                     </div>
                     <span
+                      id="request-pickup"
                       class="font-semibold text-sm text-[#111811] dark:text-white"
                       >Request Pickup</span
                     >
@@ -363,11 +388,13 @@
                     <div
                       class="p-3 rounded-full bg-green-50 dark:bg-green-900/20 text-primary group-hover:scale-110 transition-transform"
                     >
-                      <span class="material-symbols-outlined text-3xl"
+                      <span
+                        class="material-symbols-outlined text-3xl cursor-pointer"
                         >location_on</span
                       >
                     </div>
                     <span
+                      id="live-tracker"
                       class="font-semibold text-sm text-[#111811] dark:text-white"
                       >Live Tracker</span
                     >
@@ -378,11 +405,13 @@
                     <div
                       class="p-3 rounded-full bg-gray-50 dark:bg-white/10 text-gray-600 dark:text-gray-300 group-hover:scale-110 transition-transform"
                     >
-                      <span class="material-symbols-outlined text-3xl"
+                      <span
+                        class="material-symbols-outlined text-3xl cursor-pointer"
                         >calendar_month</span
                       >
                     </div>
                     <span
+                      id="view-schedule"
                       class="font-semibold text-sm text-[#111811] dark:text-white"
                       >View Schedule</span
                     >
@@ -390,6 +419,7 @@
                 </div>
                 <!-- Live Map Mini-View -->
                 <div
+                  id="live-tracker-section"
                   class="bg-white dark:bg-[#1a2e1a] rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 p-4"
                 >
                   <div class="flex justify-between items-center mb-4 px-2">
@@ -401,11 +431,17 @@
                         Live Route Tracker
                       </h3>
                     </div>
+                    <!-- Truck info dynamically updated -->
+                    <span id="truck-id" class="text-sm font-medium text-primary"
+                      >Truck 5</span
+                    >
                     <span
-                      class="text-sm font-medium text-primary bg-primary/10 px-2 py-1 rounded-lg"
-                      >Truck 5 • 15 mins away</span
+                      id="truck-eta"
+                      class="text-sm font-medium text-primary"
+                      >15 mins away</span
                     >
                   </div>
+
                   <div
                     class="relative h-48 sm:h-64 rounded-xl overflow-hidden group"
                   >
@@ -417,22 +453,21 @@
                         background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA15KwXGW3s7EIn-Sr4QhLJAV680WIpPme0fyRuZ6m8gnZmxbrmzJJjwj6inuU1pGG8V6xWd75MbjR--Sht0KE1kNOy4kE4jO96nNuAFp0Ek_eMHcOc5URGj3fY8FMeP7FudFve8A6Hdz62jyxoxEG_WnxMudAYXLwOyRj8gUW80rtAcGm4Tw61hbDGmD7OTRl89K1EPiUpYsfioprlKAIiCmuYvGD8aDGdAZ0lgUbW7JqIPvok4kbuJibu88lsBRhOGkJy0FuS4eE');
                       "
                     ></div>
+
                     <!-- Overlay Elements mimicking Google Maps UI -->
                     <div class="absolute bottom-4 right-4 flex flex-col gap-2">
                       <button
+                        id="refresh-tracker"
                         class="bg-white text-gray-700 p-2 rounded-lg shadow-md hover:bg-gray-50"
                       >
-                        <span class="material-symbols-outlined">add</span>
-                      </button>
-                      <button
-                        class="bg-white text-gray-700 p-2 rounded-lg shadow-md hover:bg-gray-50"
-                      >
-                        <span class="material-symbols-outlined">remove</span>
+                        <span class="material-symbols-outlined">refresh</span>
                       </button>
                     </div>
+
                     <div
                       class="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors pointer-events-none"
                     ></div>
+
                     <button
                       class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-[#1a2e1a] text-[#111811] dark:text-white px-4 py-2 rounded-lg font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0"
                     >
@@ -440,8 +475,10 @@
                     </button>
                   </div>
                 </div>
+
                 <!-- Recent Activity Feed -->
                 <div
+                  id="recent-activity-list"
                   class="bg-white dark:bg-[#1a2e1a] rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 p-6"
                 >
                   <div class="flex justify-between items-center mb-6">
@@ -451,12 +488,13 @@
                       Recent Activity
                     </h3>
                     <a
+                      id="see-all-reports"
                       class="text-primary text-sm font-semibold hover:underline"
                       href="#"
                       >See All</a
                     >
                   </div>
-                  <div class="space-y-4">
+                  <div id="recent-activity" class="space-y-4">
                     <div class="flex gap-4 items-start">
                       <div
                         class="mt-1 size-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-primary shrink-0"
@@ -574,6 +612,7 @@
                       </div>
                       <div class="flex items-end gap-2 mb-1">
                         <span
+                          id="reports-count"
                           class="text-2xl font-bold text-[#111811] dark:text-white"
                           >5</span
                         >
@@ -585,11 +624,17 @@
                         class="w-full bg-gray-200 dark:bg-white/10 rounded-full h-1.5 mb-1"
                       >
                         <div
+                          id="reports-progress"
                           class="bg-accent h-1.5 rounded-full"
                           style="width: 80%"
                         ></div>
                       </div>
-                      <p class="text-xs text-gray-500 text-right">4 resolved</p>
+                      <p
+                        id="reports-resolved"
+                        class="text-xs text-gray-500 text-right"
+                      >
+                        4 resolved
+                      </p>
                     </div>
                     <div
                       class="p-4 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/5"
@@ -610,6 +655,7 @@
                       </div>
                       <div class="flex items-end gap-2 mb-1">
                         <span
+                          id="collections-count"
                           class="text-2xl font-bold text-[#111811] dark:text-white"
                           >12</span
                         >
@@ -621,11 +667,17 @@
                         class="w-full bg-gray-200 dark:bg-white/10 rounded-full h-1.5 mb-1"
                       >
                         <div
+                          id="collections-progress"
                           class="bg-secondary h-1.5 rounded-full"
                           style="width: 100%"
                         ></div>
                       </div>
-                      <p class="text-xs text-gray-500 text-right">0 missed</p>
+                      <p
+                        id="collections-missed"
+                        class="text-xs text-gray-500 text-right"
+                      >
+                        0 missed
+                      </p>
                     </div>
                     <div
                       class="p-4 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/5"
@@ -641,12 +693,14 @@
                           Eco-Points
                         </div>
                         <span
+                          id="ecopoints-level"
                           class="text-xs font-medium text-primary bg-primary/10 px-2 rounded-full"
                           >Level 2</span
                         >
                       </div>
                       <div class="flex items-end gap-2 mb-1">
                         <span
+                          id="ecopoint-count"
                           class="text-2xl font-bold text-[#111811] dark:text-white"
                           >150</span
                         >
@@ -656,6 +710,7 @@
                         class="w-full bg-gray-200 dark:bg-white/10 rounded-full h-1.5"
                       >
                         <div
+                          id="ecopoints-progress"
                           class="bg-primary h-1.5 rounded-full"
                           style="width: 45%"
                         ></div>
@@ -665,6 +720,7 @@
                 </div>
                 <!-- Upcoming Schedule -->
                 <div
+                  id="upcoming-list"
                   class="bg-white dark:bg-[#1a2e1a] rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 p-6"
                 >
                   <div class="flex justify-between items-center mb-4">
@@ -674,7 +730,8 @@
                       Upcoming
                     </h3>
                     <button
-                      class="text-sm text-gray-500 hover:text-primary transition-colors flex items-center gap-1"
+                      id="full-week-btn"
+                      class="text-sm text-gray-500 hover:text-primary transition-colors flex items-center gap-1 cursor-pointer"
                     >
                       Full Week
                       <span class="material-symbols-outlined text-sm"
@@ -758,6 +815,7 @@
                 </div>
                 <!-- Waste Guidance Accordion -->
                 <div
+                  id="waste-guide-list"
                   class="bg-white dark:bg-[#1a2e1a] rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 p-6"
                 >
                   <h3
@@ -768,7 +826,7 @@
                   <div class="space-y-3">
                     <!-- Green Bin -->
                     <div
-                      class="border border-green-200 dark:border-green-900/50 rounded-xl overflow-hidden"
+                      class="guide-header border border-green-200 dark:border-green-900/50 rounded-xl overflow-hidden"
                     >
                       <div
                         class="bg-green-50 dark:bg-green-900/20 px-4 py-3 flex items-center justify-between cursor-pointer"
@@ -800,7 +858,7 @@
                       class="border border-blue-200 dark:border-blue-900/50 rounded-xl overflow-hidden opacity-80 hover:opacity-100 transition-opacity"
                     >
                       <div
-                        class="bg-blue-50 dark:bg-blue-900/20 px-4 py-3 flex items-center justify-between cursor-pointer"
+                        class="guide-header bg-blue-50 dark:bg-blue-900/20 px-4 py-3 flex items-center justify-between cursor-pointer"
                       >
                         <div class="flex items-center gap-3">
                           <div class="size-3 rounded-full bg-blue-500"></div>
@@ -820,7 +878,7 @@
                       class="border border-gray-200 dark:border-gray-700/50 rounded-xl overflow-hidden opacity-80 hover:opacity-100 transition-opacity"
                     >
                       <div
-                        class="bg-gray-100 dark:bg-gray-800/30 px-4 py-3 flex items-center justify-between cursor-pointer"
+                        class="guide-header bg-gray-100 dark:bg-gray-800/30 px-4 py-3 flex items-center justify-between cursor-pointer"
                       >
                         <div class="flex items-center gap-3">
                           <div
@@ -842,7 +900,7 @@
               </div>
             </div>
             <footer class="mt-8 pb-8 text-center text-sm text-gray-400">
-              <p>© 2023 CleanOps Olongapo. All rights reserved.</p>
+              <p>© 2024 CleanOps Olongapo. All rights reserved.</p>
             </footer>
           </div>
         </div>
@@ -851,5 +909,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script type="module" src="../js/dashboard/auth-check.js"></script>
+    <script type="module" src="../js/dashboard/data-fetcher.js"></script>
+    <script type="module" src="../js/dashboard/ui-renderer.js"></script>
   </body>
 </html>
